@@ -13,17 +13,18 @@ module.exports = {
     },
     path: path.resolve(__dirname)
   },
+  watchOptions: {
+    ignored: ['node_modules/**', 'packages/**/dist/**']
+  },
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.scss$/i,
         use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
+          'raw-loader',
+          {
+            loader: 'sass-loader'
+          }
         ],
       },
     ],
