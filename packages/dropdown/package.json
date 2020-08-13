@@ -1,6 +1,6 @@
 {
-  "name": "@jacmanh/button",
-  "version": "1.0.3",
+  "name": "@jacmanh/dropdown",
+  "version": "0.0.0",
   "main": "dist/index.js",
   "publishConfig": {
     "access": "public"
@@ -8,7 +8,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jacmanh/uisystem.git",
-    "directory": "packages/button"
-  },
-  "gitHead": "51b93cd3364b1b95f4491b8e9d79207e7a695790"
+    "directory": "packages/dropdown"
+  }
 }

@@ -1,6 +1,18 @@
+const path = require('path');
 
 module.exports = {
   mode: "development",
+  entry: {
+    button: "./packages/button/",
+    dropdown: "./packages/dropdown/"
+  },
+  output: {
+    filename(pathData) {
+      const dir = pathData.chunk.entryModule.rawRequest
+      return dir + "dist/index.js"
+    },
+    path: path.resolve(__dirname)
+  },
   module: {
     rules: [
       {

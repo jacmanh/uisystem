@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./packages/button/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./index.js":
-/*!******************!*\
-  !*** ./index.js ***!
-  \******************/
+/***/ "./packages/button/index.js":
+/*!**********************************!*\
+  !*** ./packages/button/index.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("class Button extends HTMLElement {\n  constructor() {\n    super();\n \n    this._shadowRoot = this.attachShadow({ mode: 'open' });\n    this._shadowRoot.appendChild(template.content.cloneNode(true));\n \n    this.$button = this._shadowRoot.querySelector('button');\n  }\n \n  render() {\n    this.$button.innerHTML = 'mon bouton';\n  }\n}\n\n//# sourceURL=webpack:///./index.js?");
+eval("class Button extends HTMLElement {\n  constructor() {\n    super();\n  }\n \n  connectedCallback() {\n    this.innerHTML = 'mon bouton';\n  }\n}\nwindow.customElements.define('ui-button', Button)\n\n//# sourceURL=webpack:///./packages/button/index.js?");
 
 /***/ })
 
