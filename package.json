@@ -1,0 +1,20 @@
+{
+  "name": "uisystem",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "webpack  --config webpack.config.js"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
