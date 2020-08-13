@@ -1,8 +1,12 @@
 {
   "name": "@uisystem/button",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --config ./webpack.config.js"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "fab600f82cb10dae947797bbb2aa44b8b687eaa6"
 }
