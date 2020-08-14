@@ -1,0 +1,13 @@
+{
+  "name": "@jacmanh/theme",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacmanh/uisystem.git",
+    "directory": "packages/theme"
+  }
+}
