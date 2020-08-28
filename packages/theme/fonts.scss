@@ -1,0 +1,16 @@
+$icon-font-family: "ui-icon" !default;
+$icon-font-path: "assets/fonts/icons" !default;
+
+$icon-login: "\e900";
+$icon-register: "\e901";
+
+@font-face {
+  font-family: '#{$icon-font-family}';
+  src:
+    url('#{$icon-font-path}/#{$icon-font-family}.ttf?m7ma3t') format('truetype'),
+    url('#{$icon-font-path}/#{$icon-font-family}.woff?m7ma3t') format('woff'),
+    url('#{$icon-font-path}/#{$icon-font-family}.svg?m7ma3t##{$icon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}

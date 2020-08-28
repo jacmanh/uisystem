@@ -5,7 +5,10 @@ module.exports = [{
   mode: "development",
   entry: {
     button: "./packages/button/index.js",
-    dropdown: "./packages/dropdown/index.js"
+    dropdown: "./packages/dropdown/index.js",
+    textfield: "./packages/textfield/index.js",
+    icon: "./packages/icon/index.js",
+    utils: "./packages/utils/index.js"
   },
   output: {
     filename(pathData) {
@@ -21,16 +24,25 @@ module.exports = [{
   module: {
     rules: [
       {
+        test: /\.js?$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
+      },
+      {
         test: /\.scss$/i,
         use: [
           'raw-loader',
-          {
-            loader: 'sass-loader'
-          }
+          'resolve-url-loader',
+          'sass-loader'
         ],
       },
     ],
-  },
+  }
 }, {
   mode: "development",
   entry: "./packages/theme/styles.scss",
@@ -48,7 +60,15 @@ module.exports = [{
             loader: 'sass-loader'
           }
         ],
-      }
+      },
+      {
+        test: /\.(woff|woff2|ttf|svg|eot)$/,
+        use: [
+          {
+            loader: 'url-loader'
+          }
+        ]
+      },
     ]
   },
   plugins: [

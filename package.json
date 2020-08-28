@@ -12,13 +12,20 @@
     "watch": "webpack --watch  --config webpack.config.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
     "css-loader": "^4.2.1",
     "lerna": "^3.22.1",
     "mini-css-extract-plugin": "^0.10.0",
     "node-sass": "^4.14.1",
     "raw-loader": "^4.0.1",
+    "resolve-url-loader": "^3.1.1",
     "sass-loader": "^9.0.3",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "url-loader": "^4.1.0"
   }
 }

@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap');
+@import './fonts.scss';
+
 :root {
+  // Fonts
+  --font-size: 14px;
+  --primary-font: Roboto, Arial, Helvetica, sans-serif;
+  // Colors
   --primary-color: grey;
+  --action-color: #ff5e3a;
+  --border-color: #d8dbe6;
+  // Inputs
+  --input-text-color: #515365;
+  --input-label-color: #888da8;
 }

@@ -1,0 +1,44 @@
+* {
+  font-family: var(--primary-font);
+  box-sizing: border-box;
+}
+
+:host {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  padding: 5px 10px;
+}
+
+label {
+  position: absolute;
+  color: var(--input-label-color);
+  font-size: 1em;
+  transform-origin: top left;
+  top: 50%;
+  transform: translate(0, -50%) scale(1);
+  transition: all .1s ease-in-out;
+
+  :host(.active) &,
+  :host([data-filled=true]) & {
+    transform: translate(0, -90%) scale(.75);
+  }
+}
+
+input {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  font-size: 1em;
+  padding-top: 8px;
+  color: var(--input-text-color);
+  border: none;
+  outline: 0;
+
+  &::placeholder {
+    color: var(--input-label-color);
+  }
+}

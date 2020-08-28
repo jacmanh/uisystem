@@ -1,0 +1,30 @@
+$icon-login: "\e900";
+$icon-register: "\e901";
+
+:host([class^="icon-"], [class*=" icon-"]) {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ui-icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:host(.icon-login) {
+  &:before {
+    content: $icon-login; 
+  }
+}
+
+:host(.icon-register) {
+  &:before {
+    content: $icon-register; 
+  }
+}
+
