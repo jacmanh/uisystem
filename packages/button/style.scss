@@ -3,7 +3,6 @@
   display: inline-block;
   font-size: var(--font-size);
   color: #fff;
-  background-color: var(--action-color);
   border: none;
   text-align: center;
   padding: 10px;
@@ -12,8 +11,30 @@
   cursor: pointer;
 }
 
+:host([action]) {
+  background-color: var(--action-color);
+}
+:host([action]:hover) {
+  background-color: var(--action-hover-color);
+}
+
+:host([action2]) {
+  background-color: var(--action2-color);
+}
+:host([action2]:hover) {
+  background-color: var(--action2-hover-color);
+}
+
 :host([fullWidth=true]) {
   display: block;
+}
+
+:host([disabled]) {
+  background-color: var(--input-disabled-color);
+  cursor: default;
+}
+:host([disabled]:hover) {
+  background-color: var(--input-disabled-color);
 }
 
 button {

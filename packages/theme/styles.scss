@@ -7,9 +7,35 @@
   --primary-font: Roboto, Arial, Helvetica, sans-serif;
   // Colors
   --primary-color: grey;
+  --secondary-color: #3f4257;
+  --secondary-light-color: #9a9fbf;
   --action-color: #ff5e3a;
+  --action-hover-color: #ff763a;
+  --action2-color: #7c5ac2;
+  --action2-hover-color: #9069e0;
   --border-color: #d8dbe6;
   // Inputs
   --input-text-color: #515365;
   --input-label-color: #888da8;
+  --input-border-radius: 5px;
+  --input-disabled-color: #d7d9e5;
+}
+
+body {
+  color: var(--primary-color);
+}
+
+// TYPOGRAPHY
+.link {
+  color: var(--action-color);
+  text-decoration: none;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

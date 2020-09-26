@@ -1,7 +1,8 @@
 import styles from './style.scss'
 
+import './menu-link/index'
 
-class Icon extends HTMLElement {
+class Menu extends HTMLElement {
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
@@ -11,14 +12,17 @@ class Icon extends HTMLElement {
   }
 
   connectedCallback() {
+    const html = document.createRange().createContextualFragment(this.render())
+    this.shadowRoot.appendChild(html)
     this.shadowRoot.appendChild(this._style)
-    this.classList.add(`icon-${this.iconName}`)
-
   }
 
-  get iconName() {
-    return this.getAttribute('name') || null
+
+  render() {
+    return `
+      <slot />
+    `
   }
 }
 
-window.customElements.define('ui-icon', Icon)
+window.customElements.define('ui-menu', Menu)

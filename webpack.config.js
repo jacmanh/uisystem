@@ -5,9 +5,12 @@ module.exports = [{
   mode: "development",
   entry: {
     button: "./packages/button/index.js",
+    checkbox: "./packages/checkbox/index.js",
     dropdown: "./packages/dropdown/index.js",
-    textfield: "./packages/textfield/index.js",
     icon: "./packages/icon/index.js",
+    menu: "./packages/menu/index.js",
+    tabs: "./packages/tabs/index.js",
+    textfield: "./packages/textfield/index.js",
     utils: "./packages/utils/index.js"
   },
   output: {
@@ -16,7 +19,8 @@ module.exports = [{
       dir = dir.substring(0, dir.lastIndexOf("/"));
       return dir + "/dist/index.js"
     },
-    path: path.resolve(__dirname)
+    path: path.resolve(__dirname),
+    libraryTarget: 'commonjs-module'
   },
   watchOptions: {
     ignored: ['node_modules/**', 'packages/**/dist/**']

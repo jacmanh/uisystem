@@ -3,15 +3,14 @@ import styles from './style.scss'
 
 class Textfield extends HTMLElement {
   constructor() {
-    super();
+    super()
 
     this._style = document.createElement('style')
     this._style.type = 'text/css'
     this._style.appendChild(document.createTextNode(styles))
 
     this.attachShadow({ mode: 'open' })
-    this._id = `textfield-`
-
+    this._id = `textfield-${uuid(3)}`
   }
 
   connectedCallback() {
@@ -22,16 +21,16 @@ class Textfield extends HTMLElement {
     this._input = this.shadowRoot.getElementById(this._id)
 
     // Init state
-    this.dataset.filled = !!this.getAttribute('value')
+    this.dataset.filled = !!this.value
 
     // Input Events
     this._input.addEventListener('focus', e => this.onFocus())
     this._input.addEventListener('blur', e => this.onBlur())
-    this._input.addEventListener('change', e => this.onChange(e))
+    this._input.addEventListener('input', e => this.onChange(e))
   }
 
   get value() {
-    return this.getAttribute('value') || ''
+    return (this._input && this._input.value) || this.getAttribute('value') || ''
   }
 
   onFocus() {
@@ -44,11 +43,14 @@ class Textfield extends HTMLElement {
 
   onChange(e) {
     this.dataset.filled = !!e.currentTarget.value
-    this.dispatchEvent(new CustomEvent('texfieldChange', {
-      detail: {
-        value: e.currentTarget.value
-      }
-    }))
+    this.closest('FORM').dispatchEvent(
+      new CustomEvent('texfieldChange', {
+        detail: {
+          name: e.currentTarget.name,
+          value: e.currentTarget.value
+        }
+      })
+    )
   }
 
   render() {
@@ -59,6 +61,8 @@ class Textfield extends HTMLElement {
       <input
         id="${this._id}"
         type="${this.getAttribute('type') || 'text'}"
+        name="${this.getAttribute('name') || ''}"
+        ${this.getAttribute('disabled') ? "disabled" : ''}
         value="${this.value}"
       />
     `

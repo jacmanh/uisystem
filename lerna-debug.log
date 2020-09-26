@@ -1,0 +1,14 @@
+0 silly argv { _: [ 'add' ],
+0 silly argv   globs: [ '@jacmanh/utils' ],
+0 silly argv   lernaVersion: '3.22.1',
+0 silly argv   '$0': '/usr/local/bin/lerna',
+0 silly argv   pkg: 'packages/checkbox' }
+1 notice cli v3.22.1
+2 verbose rootPath /Users/cts/Sites/uisystem
+3 info versioning independent
+4 error Error: exited with error code: 128
+4 error     at ChildProcess.<anonymous> (/Users/cts/Sites/uisystem/node_modules/@evocateur/pacote/lib/util/finished.js:12:19)
+4 error     at ChildProcess.emit (events.js:198:13)
+4 error     at maybeClose (internal/child_process.js:982:16)
+4 error     at Socket.stream.socket.on (internal/child_process.js:389:11)
+4 error     at Socket.emit (events.js:198:13)

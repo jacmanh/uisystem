@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+}
+
+:host([vertical]) {
+  flex-direction: column;
+}
+
+:host([primary]) {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+:host > ::slotted(ui-menu-link) {
+  margin-left: 15px;
+  line-height: 60px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+:host([vertical]) > ::slotted(ui-menu-link) {
+  margin-left: 0;
+  text-align: center;
+}
