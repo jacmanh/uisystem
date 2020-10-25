@@ -1,6 +1,6 @@
 {
   "name": "@jacmanh/checkbox",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "publishConfig": {
     "access": "public"
@@ -11,6 +11,6 @@
     "directory": "packages/checkbox"
   },
   "dependencies": {
-    "@jacmanh/utils": "^0.0.3"
+    "@jacmanh/utils": "^0.0.4"
   }
 }
