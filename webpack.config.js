@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = [{
   mode: "development",
   entry: {
-    button: "./packages/button/index.js",
+    button: "./packages/button/index.ts",
     checkbox: "./packages/checkbox/index.js",
     dropdown: "./packages/dropdown/index.js",
     icon: "./packages/icon/index.js",
@@ -22,11 +22,20 @@ module.exports = [{
     path: path.resolve(__dirname),
     libraryTarget: 'commonjs-module'
   },
+  devtool: 'inline-source-map',
   watchOptions: {
     ignored: ['node_modules/**', 'packages/**/dist/**']
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.css', '.scss'],
+  },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.js?$/,
         exclude: /(node_modules)/,

@@ -1,6 +1,8 @@
 import styles from './style.scss'
 
 class Button extends HTMLElement {
+  _style: HTMLStyleElement
+
   constructor() {
     super()
 
